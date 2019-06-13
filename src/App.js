@@ -12,6 +12,7 @@ function App() {
       <Container >
         <Switch>
           <Route exact path="/" render={ () => <h1>Home</h1> } />
+          <Route exact path="/about" render={ () => <h1>About</h1> } />
           <Route exact path="/account/profile" render={ () => < AccountProfile />} />
         </Switch>
       </Container>

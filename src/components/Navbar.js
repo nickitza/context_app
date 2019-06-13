@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Menu } from "semantic-ui-react";
 import styled from "styled-components";
 import { AccountConsumer } from "../providers/AccountProvider";
+import Background from '../images/grey.png'
 
 const Navbar = () => (
   <AccountConsumer>
@@ -10,6 +11,9 @@ const Navbar = () => (
     <StyledMenu>
       <NavLink to="/">
         <StyledItem>Home</StyledItem>
+      </NavLink>
+      <NavLink to="/about">
+        <StyledItem>About</StyledItem>
       </NavLink>
       <NavLink to="/account/profile">
         <StyledItem>
@@ -23,8 +27,8 @@ const Navbar = () => (
 
 const StyledMenu = styled(Menu)`
   border-radius: 0 !important;
-  padding: 1.3em;
-  background-color: #8c8c8c !important ;
+  padding: 1em;
+  background-image: url(${Background}) !important ;
   margin-bottom: 1.5em !important;
 `;
 const StyledItem = styled(Menu.Item)`
@@ -32,6 +36,8 @@ const StyledItem = styled(Menu.Item)`
   transition: background 0.5s ease;
   cursor: pointer;
   font-family: "Asul", sans-serif !important;
+  font-size: 1.4em !important;
+
 
   &:hover {
     background-color: #595959 !important;

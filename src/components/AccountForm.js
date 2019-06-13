@@ -1,16 +1,25 @@
 import React from "react";
 import { Form } from "semantic-ui-react";
 import styled from 'styled-components'
+import { AccountConsumer } from '../providers/AccountProvider'
 
 
 class AccountForm extends React.Component{
-  state = { firstName: "", lastName: "", email: "" , favoriteAnimal: "", }
+  state = { 
+    firstName: this.props.firstName, 
+    lastName: this.props.lastName, 
+    email: this.props.email, 
+    favoriteAnimal: this.props.favoriteAnimal, 
+  }
 
   handleChange = (e, { name, value }) => this.setState({ [name]: value, })
   
 
-  handleSubmit = (e) => e.preventDefault();
-  
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const account = { ...this.state, };
+    this.props.updateAccount(account);
+  }
 
   render(){
     const { firstName, lastName, email, favoriteAnimal } = this.state
@@ -62,6 +71,24 @@ class AccountForm extends React.Component{
   }
 }
 
+const ConnectedAccountForm = (props) => {
+  return(
+    <AccountConsumer>
+      { value => (
+        <AccountForm
+        {...props}
+        firstName={ value.firstName }
+        lastName={ value.lastName }
+        email={ value.email }
+        favoriteAnimal={ value.favoriteAnimal }
+        updateAccount={ value.updateAccount }
+        
+        />
+      )}
+    </AccountConsumer>
+  )
+}
+
 const animalOptions = [
   {key: "1", text: "Tiger", value: "Tiger"},
   {key: "2", text: "Shark", value: "Shark"},
@@ -80,4 +107,4 @@ width: 50% !important;
 `
 
 
-export default AccountForm
+export default ConnectedAccountForm

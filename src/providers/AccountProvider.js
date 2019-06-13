@@ -10,7 +10,14 @@ import React from "react";
       lastName: "Nixon",
       dateJoined: "01/25/15",
       favoriteAnimal: "Tiger",
+      email: "nickitza@gmail.com",
+      updateAccount: (account) => this.updateAccount(account)
     }
+
+    updateAccount = (account) => {
+      this.setState({...account})
+    }
+
     render(){
       return(
         <AccountContext.Provider value={ this.state }>
