@@ -9,7 +9,7 @@ import React from "react";
       firstName: "Nicki",
       lastName: "Nixon",
       dateJoined: "01/25/15",
-      favoriteAnimal: "Tiger",
+      favoriteAnimal: "Bat",
       email: "nickitza@gmail.com",
       updateAccount: (account) => this.updateAccount(account)
     }

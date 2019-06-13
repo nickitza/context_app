@@ -29,7 +29,7 @@ const StyledMenu = styled(Menu)`
   border-radius: 0 !important;
   padding: 1em;
   background-image: url(${Background}) !important ;
-  margin-bottom: 1.5em !important;
+  margin-bottom: 2em !important;
 `;
 const StyledItem = styled(Menu.Item)`
   color: #f2f2f2 !important;
