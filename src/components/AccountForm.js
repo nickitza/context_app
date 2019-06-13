@@ -57,8 +57,7 @@ class AccountForm extends React.Component{
           Update
         </Form.Button>
       </Form>
-      </>
-        
+      </> 
     )
   }
 }

@@ -8,7 +8,7 @@ import React from "react";
     state = {
       firstName: "Nicki",
       lastName: "Nixon",
-      dateJoined: 01/25/15,
+      dateJoined: "01/25/15",
       favoriteAnimal: "Tiger",
     }
     render(){
